@@ -1,6 +1,8 @@
-
-port = Backtester
-port = port.construct('someName')
+% This script stitches together the various methods in backtester in order
+% to generate PnL of the algorithm as well as various other statistics
+% simply from a csv file of data points.
+port = Backtester;
+port = port.construct('someName');
 [returnsSums,totalRet] = port.plotIt(port.data);
 [avgRet, maxRet, startBal, endBal, percentChange, endVals] = port.calcPerformance(port.data,returnsSums);
 
