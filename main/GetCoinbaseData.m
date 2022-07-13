@@ -12,16 +12,16 @@ function GetCoinbaseData
     get_data(coinList);
     
     % Create singe time table from csv files
-    BigFreakingData(coinList);
+    BigData(coinList);
     
-    load("bigAssData.csv");
+    load("bigCSVData.csv");
     
     disp("Completed")
     head(bigAssData)
 
 end
 
-function BigFreakingData(coinList)
+function BigData(coinList)
 
     finalTT = datetime('1/1/2015'):days(1):datetime('today');
     finalTT = timetable(finalTT');
@@ -44,8 +44,8 @@ function BigFreakingData(coinList)
     
     finalTT(end,:) = [];
     
-    writetimetable(finalTT,'bigAssData.csv')
-    
+    writetimetable(finalTT,'bigCSVData.csv')
+
 end
 
 function price = getprices(coinName,startdate,stopdate,granularity)
