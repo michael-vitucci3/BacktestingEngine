@@ -12,16 +12,14 @@ function GetCoinbaseData
     get_data(coinList);
     
     % Create singe time table from csv files
-    BigData(coinList);
-    
-    load("bigCSVData.csv");
+    bigCVSData = BigData(coinList); 
     
     disp("Completed")
-    head(bigAssData)
+    head(bigCVSData)
 
 end
 
-function BigData(coinList)
+function finalTT = BigData(coinList)
 
     finalTT = datetime('1/1/2015'):days(1):datetime('today');
     finalTT = timetable(finalTT');
@@ -47,6 +45,11 @@ function BigData(coinList)
     writetimetable(finalTT,'bigCSVData.csv')
 
 end
+
+% The following two functions are adapted to fit this usecase from the
+% MATLAB file exchange: Cong Dong Ngoc Minh (2022). Building Crypto Currency Prediction
+% (https://www.mathworks.com/matlabcentral/fileexchange/92905-building-crypto-currency-prediction),
+% MATLAB Central File Exchange. Retrieved July 13, 2022. 
 
 function price = getprices(coinName,startdate,stopdate,granularity)
 

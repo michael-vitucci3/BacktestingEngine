@@ -5,9 +5,7 @@ list = {'Fetch Data From Coinbase','Backtest Data','Both'};
 % If fetching data from coinbase.... 
 if indx == 1 || indx == 3
     GetCoinbaseData();
-
-% If backtesting
+% If backtesting.....
 elseif indx == 2 || indx == 3
-    RunBacktesting();
-    
+    RunBacktesting;  
 end
