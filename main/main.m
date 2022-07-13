@@ -8,6 +8,6 @@ if indx == 1 || indx == 3
 
 % If backtesting
 elseif indx == 2 || indx == 3
-    RunBacktesting();
+    RunBacktesting;
     
 end
