@@ -7,28 +7,29 @@ function GetCoinbaseData
     url =  'https://api.pro.coinbase.com/currencies';
     coins = webread(url);
     coinList =  {coins.id}.';
-   
-
+    
     % Fetch all daily values
     get_data(coinList);
     
     % Create singe time table from csv files
     BigFreakingData(coinList);
-
+    
     load("bigAssData.csv");
-
+    
     disp("Completed")
     head(bigAssData)
-    
+
 end
 
 function BigFreakingData(coinList)
-    finalTT = [datetime('1/1/2015'):days(1):datetime('today')];
+
+    finalTT = datetime('1/1/2015'):days(1):datetime('today');
     finalTT = timetable(finalTT');
     
-      
+    coinListFiles = zeros(length(coinList));
+
     for i = 1:height(coinList)
-       
+    
         coinListFiles(i) = [coinList{i,1},'.xlsx'];
     
         opts = detectImportOptions(coinListFiles(i));
@@ -44,9 +45,11 @@ function BigFreakingData(coinList)
     finalTT(end,:) = [];
     
     writetimetable(finalTT,'bigAssData.csv')
+    
 end
 
 function price = getprices(coinName,startdate,stopdate,granularity)
+
     %https://docs.pro.coinbase.com/#get-historic-rates
     %all cryptocurrency products returned in USD
     org_url='https://api.pro.coinbase.com/products/';
@@ -69,9 +72,11 @@ function price = getprices(coinName,startdate,stopdate,granularity)
         price=array2table(Data,'VariableNames',variables);
         price.Time=datetime(price.Time,'ConvertFrom','posixtime');
     end
+
 end
 
 function get_data(coin_name)
+
     %Get raw data from Coinbase in duration 01-Jan-2018 to 08-jan-2021
     T1 = datetime(2015,01,1,0,0,0,'Format','uuuu-MM-dd''T''HH:mm:ss''Z');
     % T2 = datetime(2021,01,21,0,0,0,'Format','uuuu-MM-dd''T''HH:mm:ss''Z');
@@ -92,7 +97,7 @@ function get_data(coin_name)
         for ii=1:2:length(complete)-1
             price = getprices(product,complete{1,ii},complete{1,ii+1},granularity);
             Data = [price;Data];
-
+    
             % Coinbase only allows 10 requests per second
             pause(0.05);
         end
