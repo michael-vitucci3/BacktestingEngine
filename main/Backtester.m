@@ -72,7 +72,8 @@ classdef Backtester
         function obj = getTimeTable(obj)
 
             disp("Importing Data...");
-            obj.inTT = readtimetable(obj.fileLoc);
+            temp = readtimetable(obj.fileLoc);
+            obj.inTT = retime(temp,"daily");
             fprintf("Completed...\n")
 
         end
