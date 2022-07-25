@@ -20,20 +20,12 @@ classdef Backtester
         coinList
         data
     end
-    methods
-        function obj = construct(obj,name)
-            obj.name = name;
-            obj.createDialog;
-            obj.fileLoc = obj.setLocation;
-            obj.inTT = obj.getTimeTable;
-            obj.returns = obj.calcReturns;
-            obj.coinList = obj.getCoinList;
-            obj.data = obj.runStrategy;
-        end
-        function createDialog(obj)
+
+    methods(Static)
+        function createDialog
             d = dialog('Name','IMPORTANNT');
 
-            txt =  uicontrol('Parent',d,...
+            uicontrol('Parent',d,...
                 'Style','text',...
                 'Position',[150 150 400 240],...
                 'String',['***********************************************************************';...
@@ -50,14 +42,14 @@ classdef Backtester
                 '04-Jan-1970      4        3        1                                   ';...
                 '05-Jan-1970      5        4        2                                   ';...
                 '***********************************************************************']);
-
-            btn = uicontrol('Parent',d,...
+    
+            uicontrol('Parent',d,...
                 'Position',[85 20 70 25],...
                 'String','Close',...
                 'Callback','delete(gcf)');
         end
 
-        function fileLoc = setLocation(obj)
+        function fileLoc = setLocation
             [file,path] = uigetfile('*.csv','Select a .csv File');
             try
                 fileLoc = [fullfile(path,file)];
@@ -65,8 +57,18 @@ classdef Backtester
             catch
                 error('Error, invalid input or cancle selected')
             end
-            
+        end
+    end
 
+    methods
+        function obj = construct(obj,name)
+            obj.name = name;
+            obj.createDialog;
+            obj.fileLoc = obj.setLocation;
+            obj.inTT = obj.getTimeTable;
+            obj.returns = obj.calcReturns;
+            obj.coinList = obj.getCoinList;
+            obj.data = obj.runStrategy;
         end
 
         function obj = getTimeTable(obj)

@@ -31,27 +31,32 @@ function finalTT = BigData(coinList)
 finalTT = datetime('1/1/2015'):days(1):datetime('today');
 finalTT = timetable(finalTT');
 
-coinListFiles = zeros(1,length(coinList),'string');
+coinListFiles = [];
+
 for i = 1:height(coinList)
+    coinListFiles = zeros(1,length(coinList),'string');
     temp =  [cell2mat(coinList(i))];
     temp = horzcat(temp, '.xlsx');
-    coinListFiles(i) = string(temp);
+    temp = string(temp);
+    coinListFiles = [coinListFiles, temp];
 end
 
-temp = zeros(height(coinList),1);
+temp = [];
 for i = 1:height(coinList)
 
     try
+        temp = zeros(height(coinList),1);
         opts = detectImportOptions(coinListFiles(i));
         opts.SelectedVariableNames = {'Time', 'Close'};
         T = readtable(coinListFiles(i),opts);
         TT = table2timetable(T);
         finalTT = synchronize(finalTT,TT,"union",'fillwithconstant','Constant',0);
-        temp(i) = string(cell2mat(coinList(i)));
+        temp(i) = [temp ; string(cell2mat(coinList(i)))];
     catch
         disp(cell2mat(coinList(i)) + " Not imported")
     end
 end
+
 
 finalTT.Properties.VariableNames = temp;
 

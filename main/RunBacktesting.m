@@ -1,5 +1,5 @@
 % This script stitches together the various methods in backtester in order
-% to generate PnL of the algorithm as well as various other statistics
+% to generate profit and loss of the algorithm as well as various other statistics
 % simply from a csv file of data points.
 port = Backtester;
 port = port.construct('someName');
