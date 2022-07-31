@@ -4,6 +4,7 @@ import warnings
 import pandas as pd
 import requests
 import json
+import pprint
 
 
 # %%
@@ -50,11 +51,12 @@ def fetch_data(coin, start_time, end_time):
     # df2.index('date')
     ind = df2['date'].index
     df3 = df2.set_index('date')
+    df3.rename(columns={'date':'Date','close':coin},inplace=True)
     return df3
 
 
 # %%
-def create_df(df_dict, coinList):
+def create_df(df_dict):
     df = pd.concat(df_dict)
     return df
 
@@ -68,7 +70,7 @@ def create_dict():
     not_loaded = []
     df_dict = {}
 
-    for ii in range(len(coinList) - 200):
+    for ii in range(len(coinList)):
         flag = False
         start_date, end_date = init_time()
         full_data = fetch_data(coinList[ii], start_date, end_date)
@@ -89,29 +91,33 @@ def create_dict():
 
 
 def dict_to_df(in_dict):
-    out_df = pd.concat(
-        in_dict,
-        axis=1,
-        join="outer",
-        ignore_index=False,
-        keys=None,
-        levels=None,
-        names=None,
-        verify_integrity=True,
-        sort=False,
-        copy=True)
+    first_key = next(iter(in_dict))
+    out_df = in_dict[first_key]
+    for df in list(in_dict.values())[1:]:
+        try:
+            out_df = pd.concat([out_df,df],
+                           axis=1,
+                           join="outer",
+                           ignore_index=False,
+                           keys=None,
+                           levels=None,
+                           names=None,
+                           verify_integrity=False,
+                           sort=False,
+                           copy=True)
+            print(out_df)
+        except:
+            print(f'{df} Not Loaded')
+
     return out_df
 
 
 # %%
 def create_csv():
-
     warnings.filterwarnings("ignore", category=FutureWarning)  # disable warning
     df_dict = create_dict()  # Create dictionary of dataframes
-    print(df_dict)
     final_df = dict_to_df(df_dict)  # Merge dictionary of dataframes into single dataframe
     final_df.to_csv('BigCSVData.csv')  # Save into .csv file
-
-# if __name__ == "__main__":
-# we set which pair we want to retrieve data for
-
+    print("__________________________________________\n"
+          "| Completed importing data from Coinbase |\n"
+          "__________________________________________")
