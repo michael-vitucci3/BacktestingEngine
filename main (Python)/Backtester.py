@@ -18,6 +18,7 @@ class contains all necessary operations (besides StratFile which
 '''
 
 import easygui
+import numpy
 import pandas as pd
 import StratFile
 import numpy as np
@@ -74,7 +75,25 @@ class Backtester:
 
         plt.show()
 
-        return cum_dict
+        cum_df = pd.concat(cum_dict, axis=1, sort=True)
+        cum_df.fillna(method='ffill')
+        cum_df.fillna(method='bfill')
+        cum_df[cum_df==0] = 1
+
+        print(f'Ending Values, Each Starting at $1: \n'
+              f'{cum_df.iloc[[-1]]}')
+        plt.bar(x=cum_df.columns,height=cum_df.iloc[-1].values)
+        plt.show()
+
+        sum_vals = []
+        for i in range(len(cum_df.columns)):
+            sum_vals.append(cum_df.iloc[i].sum())
+
+        xvals = range(len(sum_vals))
+
+        plt.plot(xvals,sum_vals)
+        plt.show()
+
 
 
 a = Backtester()
