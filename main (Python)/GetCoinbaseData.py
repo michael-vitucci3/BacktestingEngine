@@ -1,5 +1,4 @@
-# %%
-# import packages
+
 import json
 import warnings
 
@@ -9,9 +8,10 @@ import requests
 
 # %%
 class GetCoinbaseData:
+    # %%
     def __init__(self):
         self.coin_list = self.fetch_coins()
-
+    # %%
     def fetch_coins(self):
         # Get all coins from Coinbase
         headers = {"Accept": "application/json"}
@@ -83,7 +83,7 @@ class GetCoinbaseData:
                     print(f"{ii + 1}/{len(coin_list)}: {coin_list[ii]}  loaded")
 
         return df_dict
-
+    #%%
     def dict_to_df(self, in_dict):
         first_key = next(iter(in_dict))
         out_df = in_dict[first_key]

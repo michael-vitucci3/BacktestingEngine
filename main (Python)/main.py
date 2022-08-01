@@ -1,9 +1,6 @@
+import easygui
 
-input_var = input('enter 1 for fetching data and 2 for backtesting data')
-import GetCoinbaseData
-import Backtester
-
-input_var = input('enter 1 for fetching data and 2 for backtesting data')
+input_var = easygui.ynbox('Please Select What You Would Like To Do', 'Title', ['Get Coinbase Data', 'Backtest'])
 
 if input_var == 1:
     import GetCoinbaseData

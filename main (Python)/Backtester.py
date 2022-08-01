@@ -18,7 +18,6 @@ class contains all necessary operations (besides StratFile which
 '''
 
 import easygui
-import numpy
 import pandas as pd
 import StratFile
 import numpy as np
@@ -28,21 +27,22 @@ import matplotlib.pyplot as plt
 
 
 class Backtester:
+    # %%
     def __init__(self):
         self.file_loc = easygui.fileopenbox(msg="Please Select .csv file of price data", filetypes="*.csv")
         self.in_df = self.load_df()
         self.ret = self.in_df.pct_change(1)
         self.logical_df = StratFile.StratFile(self.ret)
-
+    # %%
     def load_df(self):
         return pd.read_csv(self.file_loc, index_col=0)
-
+    # %%
     def get_in_df(self):
         return self.in_df
-
+    # %%
     def get_strat(self):
         return self.logical_df
-
+    # %%
     def calc_ret(self, logic_df, ret):
         logic_df_ = logic_df.copy()
         logic_df_ = logic_df_.fillna(0)
@@ -56,10 +56,10 @@ class Backtester:
         # ret_np = ret_np.replace(np.nan, 0)
         print(ret_)
         mult = logic_df_.reset_index(drop=True) * ret_.reset_index(drop=True)
-        #mult.loc[~(mult==0).all(axis=1)]
+        mult[mult==0] = 1
         print(mult)
         return mult
-
+    # %%
     def calc_stats(self):
         cum_dict={}
         tic = time.process_time()
@@ -85,16 +85,19 @@ class Backtester:
         plt.bar(x=cum_df.columns,height=cum_df.iloc[-1].values)
         plt.show()
 
-        sum_vals = []
-        for i in range(len(cum_df.columns)):
-            sum_vals.append(cum_df.iloc[i].sum())
+        #sum_vals = []
+       # for i in range(len(cum_df.iterrows())):
+        sum_vals = (cum_df.sum(axis=1))
 
+        print(sum_vals)
         xvals = range(len(sum_vals))
 
-        plt.plot(xvals,sum_vals)
+        plt.plot(xvals, sum_vals)
         plt.show()
+
+        return cum_df, algo_ret
 
 
 
 a = Backtester()
-b = a.calc_stats()
+b,c = a.calc_stats()

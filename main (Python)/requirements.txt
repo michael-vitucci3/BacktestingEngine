@@ -1,4 +1,4 @@
 pandas~=1.4.3
 requests~=2.28.1
-setuptools~=60.2.0
+setuptools==63.3.0
 easygui~=0.98.3
