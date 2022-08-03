@@ -84,7 +84,9 @@ class GetCoinbaseData:
 
         return df_dict
     #%%
-    def dict_to_df(self, in_dict):
+    # dict_to_df turns a dictionary of dataframes into one dataframe, concatenating column wise
+    @staticmethod
+    def dict_to_df(in_dict):
         first_key = next(iter(in_dict))
         out_df = in_dict[first_key]
         for df in list(in_dict.values())[1:]:
