@@ -5,7 +5,6 @@
  This means that from StratFile.m you can call other files or even languages, import more data, or just about anything else you can possibly think of
  without disrupting the backtest analysis built in.
  
- ******Python version is still under development******
  
 ## Files Overview
 =======================================================================================================
