@@ -6,10 +6,10 @@ if input_var == 1:
     import GetCoinbaseData
 
     a = GetCoinbaseData
-    a.GetCoinbaseData.create_csv()
+    a.GetCoinbaseData().create_csv()
 
 else:
     import Backtester
 
-    a = Backtester.Backtester
-    a.calc_stats()
+    a = Backtester
+    a.Backtester().calc_stats()
