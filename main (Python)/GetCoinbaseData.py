@@ -1,4 +1,3 @@
-
 import json
 import warnings
 
@@ -11,6 +10,7 @@ class GetCoinbaseData:
     # %%
     def __init__(self):
         self.coin_list = self.fetch_coins()
+
     # %%
     def fetch_coins(self):
         # Get all coins from Coinbase
@@ -83,7 +83,8 @@ class GetCoinbaseData:
                     print(f"{ii + 1}/{len(coin_list)}: {coin_list[ii]}  loaded")
 
         return df_dict
-    #%%
+
+    # %%
     # dict_to_df turns a dictionary of dataframes into one dataframe, concatenating column wise
     @staticmethod
     def dict_to_df(in_dict):
