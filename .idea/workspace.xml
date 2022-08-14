@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b68ada55-2b24-47c2-80e3-e47929786fdd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/csv-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/main (Python).iml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/main (Python).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Backtester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/BigCSVData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/BigCSVData.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/GetCoinbaseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/GetCoinbaseData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/StratFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/StratFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main (Python)/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/setup.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2CmlJ1cw2Bl2FRbxMENn6sSmgKC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mike/PycharmProjects/GitHub/BacktestingEngine&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="BacktestingEngine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b68ada55-2b24-47c2-80e3-e47929786fdd" name="Changes" comment="" />
+      <created>1659415565997</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659415565997</updated>
+      <workItem from="1659415567753" duration="4266000" />
+      <workItem from="1659855013922" duration="831000" />
+      <workItem from="1659855849929" duration="1831000" />
+      <workItem from="1659857787626" duration="1638000" />
+      <workItem from="1659859800971" duration="7895000" />
+      <workItem from="1660282958699" duration="5116000" />
+      <workItem from="1660358632303" duration="2657000" />
+      <workItem from="1660457585937" duration="11029000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BacktestingEngine$Backtester.coverage" NAME="Backtester Coverage Results" MODIFIED="1659855385257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main (Python)" />
+  </component>
+</project>
