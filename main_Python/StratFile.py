@@ -1,4 +1,4 @@
-
+import numpy
 def strat_file(ret):
     """
     Example strategy which is not profitable. If you trade based off it, you will loose money....

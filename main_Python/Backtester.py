@@ -19,7 +19,7 @@ import time
 
 import easygui
 import matplotlib.pyplot as plt
-import numpy as np
+import numpy
 import pandas as pd
 
 import StratFile
@@ -28,28 +28,10 @@ import StratFile
 class Backtester:
     # %%
     def __init__(self):
-
         self.file_loc = easygui.fileopenbox(msg="Please Select .csv file of price data", filetypes="*.csv")
-        self.in_df = self.load_df()
-        self.ret = self.in_df.astype(np.number).pct_change(1) #get rid of
-        self.logical_df = StratFile.strat_file(self.ret)
-
-    # %%
-    def load_df(self): #make private
-        """
-        :param self:
-        :return: a dataframe of price values generated from user selection of csv file
-        """
-        return pd.read_csv(self.file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
-
-    # %%
-    def get_in_df(self):
-        """
-        :param self:
-        :return: in_df: a dataframe of price values generated from user selection of csv file
-        """
-
-        return self.in_df
+        # self.in_df = self.csv_df()
+        self.csv_df = pd.read_csv(self.file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
+        self.logical_df = StratFile.strat_file(self.csv_df.astype(numpy.number).pct_change(1))
 
     # %%
     def get_strat(self):
@@ -94,7 +76,8 @@ class Backtester:
         :returns: [cum_df, algo_ret]: [dataframe of cumulative values, returns based off StratFile]
         """
         tic = time.process_time()
-        algo_ret = self.calc_ret(self.logical_df, self.ret)
+        ret = self.csv_df.astype(numpy.number).pct_change(1)
+        algo_ret = self.calc_ret(self.logical_df, ret)
         toc = time.process_time()
         print(f'{(toc - tic) * 1000}ms')
 
@@ -153,9 +136,9 @@ class Backtester:
 
     #%%
     @staticmethod
-    def plotter(data1,data2,data3):
+    def plotter(data1, data2, data3):
 
-        #Plot val_each_asset data
+        # Plot val_each_asset data
         fig1, ax1 = plt.subplots()
         for data in data1.values():
             ax1.plot(data)
@@ -163,17 +146,19 @@ class Backtester:
         ax1.set_ylabel("Value (Dollars) [Starting Value of 1 Dollar for Each]")
         plt.show()
 
-        #Plot ending_vals data
+        # Plot ending_vals data
         fig2, ax2 = plt.subplots()
         ax2.bar(x=data2.columns, height=data2.iloc[-1].values)
         ax2.set_xlabel("Asset")
         ax2.set_ylabel("Ending Value (Dollars) [Starting Value of 1 Dollar for Each]")
         plt.show()
 
-        #Plot daily_portfolio data
+        # Plot daily_portfolio data
         fig3, ax3 = plt.subplots()
         xvals = range(len(data3))
         ax3.plot(xvals, data3)
         ax3.set_xlabel("Days (# Days)")
         ax3.set_ylabel(f'Portfolio Value (Dollars) [starting value of {len(data2.columns)}]')
         plt.show()
+
+
