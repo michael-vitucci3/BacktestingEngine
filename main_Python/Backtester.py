@@ -19,8 +19,8 @@ import time
 
 import easygui
 import matplotlib.pyplot as plt
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 import StratFile
 
@@ -31,18 +31,16 @@ class Backtester:
 
         self.file_loc = easygui.fileopenbox(msg="Please Select .csv file of price data", filetypes="*.csv")
         self.in_df = self.load_df()
-        self.ret = self.in_df.astype(np.number).pct_change(1)
+        self.ret = self.in_df.astype(np.number).pct_change(1) #get rid of
         self.logical_df = StratFile.strat_file(self.ret)
 
     # %%
-    def load_df(self):
+    def load_df(self): #make private
         """
         :param self:
         :return: a dataframe of price values generated from user selection of csv file
         """
-        csv_df = pd.read_csv(self.file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
-
-        return csv_df
+        return pd.read_csv(self.file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
 
     # %%
     def get_in_df(self):
@@ -72,7 +70,7 @@ class Backtester:
         :param ret: returns at each data point (except the last since N data points yields N-1 returns values)
         :return: mult: element wise multiplication of two data frames (differing in size by one row)
         """
-
+        # maybe unnecessary
         logic_df_ = logic_df.copy()
         logic_df_ = logic_df_.fillna(0)
         logic_df_ = logic_df_[1:]

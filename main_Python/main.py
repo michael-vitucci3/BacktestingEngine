@@ -1,15 +1,23 @@
-import easygui
+import PySimpleGUI as sg
+import FetchCoinbaseData
+import Backtester
 
-input_var = easygui.ynbox('Please Select What You Would Like To Do', 'Title', ['Get Coinbase Data', 'Backtest'])
+sg.theme('DarkAmber')
+layout = [[sg.Text('Please Choose What You Would Like To Do')],
+            [sg.Button('Fetch Coinbase Data'), sg.Button('Backtest'), sg.Button('Cancel')]]
 
-if input_var == 1:
-    import GetCoinbaseData
+# Create the Window
+window = sg.Window('BacktestingEngine.v2', layout)
+# Event Loop to process "events" and get the "values" of the inputs
+while True:
+    event, values = window.read()
+    if event == 'Fetch Coinbase Data':
+        a = FetchCoinbaseData
+        a.FetchCoinbaseData().create_csv()
+    elif event == 'Backtest':
+        a = Backtester
+        a.Backtester().calc_stats()
+    elif event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+        break
 
-    a = GetCoinbaseData
-    a.GetCoinbaseData().create_csv()
-
-else:
-    import Backtester
-
-    a = Backtester
-    a.Backtester().calc_stats()
+window.close()

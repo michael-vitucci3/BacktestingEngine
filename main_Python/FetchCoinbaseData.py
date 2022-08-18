@@ -7,26 +7,19 @@ import requests
 
 
 # %%
-class GetCoinbaseData:
-    # %%
-    def __init__(self):
-        self.coin_list = self.fetch_coins()
+class FetchCoinbaseData:
 
-    # %%
-    @staticmethod
-    def fetch_coins():
-        """
-        Get all coins from Coinbase
-        :return: coin_list - list of all coins on Coinbase
-        """
-
-        headers = {"Accept": "application/json"}
+    headers = {"Accept": "application/json"}
+    try:
         coins = requests.get("https://api.exchange.coinbase.com/currencies", headers=headers).json()
         coin_list = []
-        for i in range(len(coins)):
+        for i in range(len(coins)):  # coin in coinlist
             coin_list.append(str(coins[i]['id']))
         coin_list.sort()
-        return coin_list
+    except:
+        raise Exception("API Error: Coin List Not Fetched")
+
+
 
     # %%
     @staticmethod
@@ -35,9 +28,8 @@ class GetCoinbaseData:
         :return: [start_time, end_time]: initial time/day to use
         """
 
-        a_day = pd.Timedelta('1 day')
         start_date = pd.Timestamp('2015-01-01')
-        end_date = pd.Timestamp('2015-01-01') + 300 * a_day
+        end_date = pd.Timestamp('2015-01-01') + 300 * pd.Timedelta('1 day')
         return start_date, end_date
 
     # %%
@@ -79,42 +71,27 @@ class GetCoinbaseData:
         return df3
 
     # %%
-    @staticmethod
-    def create_df(df_dict):
-        """
-        Make one dataframe from dict of dataframes
-        :param df_dict: dict of dataframes
-        :return: df - single dataframe from many concatenated dataframes
-        """
-
-        df = pd.concat(df_dict)
-        return df
-
-    # %%
     def create_dict(self):
         """
         :param self:
         :return: df_dict = dict of dataframes (each key value pair representing a coins data)
         """
-        coin_list = self.coin_list
         df_dict = {}
 
-        for ii in range(len(coin_list)):
-            flag = False
+        for ii in range(len(self.coin_list)):
             start_date, end_date = self.init_time()
-            full_data = self.fetch_data(coin_list[ii], start_date, end_date)
-            for i in range(1, 9):
+            full_data = self.fetch_data(self.coin_list[ii], start_date, end_date)
+            for i in range(1, 9): # make variable
                 start_date, end_date = self.next_time(i)
-                data = self.fetch_data(coin_list[ii], start_date, end_date)
+                data = self.fetch_data(self.coin_list[ii], start_date, end_date)
                 full_data = pd.concat([full_data, data])
 
-            if not flag:
-                if full_data.empty:
-                    print(f"{ii + 1}/{len(coin_list)}: {coin_list[ii]}  not loaded")
-                else:
-                    temp = full_data.sort_index(ascending=True)
-                    df_dict.update({coin_list[ii]: temp})
-                    print(f"{ii + 1}/{len(coin_list)}: {coin_list[ii]}  loaded")
+            if full_data.empty:
+                print(f"{ii + 1}/{len(self.coin_list)}: {self.coin_list[ii]}  not loaded")
+            else:
+                temp = full_data.sort_index(ascending=True)
+                df_dict.update({self.coin_list[ii]: temp})
+                print(f"{ii + 1}/{len(self.coin_list)}: {self.coin_list[ii]}  loaded")
 
         return df_dict
 
@@ -157,6 +134,6 @@ class GetCoinbaseData:
         df_dict = self.create_dict()  # Create dictionary of dataframes
         final_df = self.dict_to_df(df_dict)  # Merge dictionary of dataframes into single dataframe
         final_df.to_csv('BigCSVData.csv', na_rep=np.NaN)  # Save into .csv file
-        print("__________________________________________\n"
-              "| Completed importing data from Coinbase |\n"
-              "__________________________________________")
+        print("""__________________________________________\n
+              | Completed importing data from Coinbase |\n
+              __________________________________________""")

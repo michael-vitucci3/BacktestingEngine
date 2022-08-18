@@ -11,23 +11,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/csv-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/main (Python).iml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/main (Python).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Backtester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/BigCSVData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/BigCSVData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/GetCoinbaseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/GetCoinbaseData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/StratFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/StratFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main (Python)/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/main (Python).iml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/main (Python).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Backtester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/GetCoinbaseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/FetchCoinbaseData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +92,12 @@
       <workItem from="1659859800971" duration="7895000" />
       <workItem from="1660282958699" duration="5116000" />
       <workItem from="1660358632303" duration="2657000" />
-      <workItem from="1660457585937" duration="11029000" />
+      <workItem from="1660457585937" duration="11470000" />
+      <workItem from="1660791993332" duration="5801000" />
+      <workItem from="1660799038041" duration="56000" />
+      <workItem from="1660827778760" duration="42000" />
+      <workItem from="1660827872963" duration="135000" />
+      <workItem from="1660828019849" duration="1146000" />
     </task>
     <servers />
   </component>
