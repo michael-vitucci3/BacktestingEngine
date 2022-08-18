@@ -1,18 +1,18 @@
 """
-% Backtester
+Backtester
 class contains all necessary operations (besides StratFile which
-% is stored in the main folder) to fully execute a backtest.Furthermore,
-% it is a convenient data storage object. Apon calling obj.constructor
-% all data will populate including
-% fileLoc: Location of user input csv data
-% inTT: Timetable of dates and prices gathered from a user input csv
-% Returns: Daily returns of each asset during all provided data points
-% coinList: List of assets gathered from csv file
-% data: Using StratFile, a new version of returns is generated.If the
-% algorithm is holding an asset on that day, the data points
-% remain, otherwise it is changed to zero.This yeilds the actual
-% returns assuming instantaneous rebalancing at 12: 00:00 UTC
-% daily.
+is stored in the main folder) to fully execute a backtest.Furthermore,
+it is a convenient data storage object. Apon calling obj.constructor
+all data will populate including
+fileLoc: Location of user input csv data
+inTT: Timetable of dates and prices gathered from a user input csv
+Returns: Daily returns of each asset during all provided data points
+coinList: List of assets gathered from csv file
+data: Using StratFile, a new version of returns is generated.If the
+algorithm is holding an asset on that day, the data points
+remain, otherwise it is changed to zero.This yeilds the actual
+returns assuming instantaneous rebalancing at 12: 00:00 UTC
+daily.
 """
 
 import time
@@ -102,9 +102,10 @@ class Backtester:
 
         cum_df = self.ending_vals(cum_dict)
 
-        self.daily_portfolio(cum_df)
+        sum_vals = self.daily_portfolio(cum_df)
 
-        return cum_df, algo_ret
+        self.plotter(cum_dict, cum_df, sum_vals)
+
 
     # %%
     @staticmethod
@@ -115,16 +116,10 @@ class Backtester:
         :return: cum_dict - communicative values in dictionary
         """
         cum_dict = {}
-        fig, ax = plt.subplots()
         for (col_name, col_data) in algo_ret.iteritems():
             vals = col_data.loc[~(col_data == 0)]
-            ax.plot(vals.index, vals)
 
             cum_dict.update({col_name: vals.cumprod()})
-
-        ax.set_xlabel("Days (# Days)")
-        ax.set_ylabel("Value (Dollars) [Starting Value of 1 Dollar for Each]")
-        plt.show()
 
         return cum_dict
 
@@ -142,11 +137,6 @@ class Backtester:
 
         print(f'Ending Values, Each Starting at $1: \n'
               f'{cum_df.iloc[[-1]]}')
-        ax.bar(x=cum_df.columns, height=cum_df.iloc[-1].values)
-
-        ax.set_xlabel("Asset")
-        ax.set_ylabel("Ending Value (Dollars) [Starting Value of 1 Dollar for Each]")
-        plt.show()
 
         return cum_df
 
@@ -155,16 +145,35 @@ class Backtester:
         """
         :param cum_df: communicative values in dataframe
         """
-        fig, ax = plt.subplots()
         sum_vals = (cum_df.sum(axis=1))
-
         print("Value of entire portfolio each day:")
         print(sum_vals)
-        xvals = range(len(sum_vals))
 
-        ax.plot(xvals, sum_vals)
+        return sum_vals
 
-        ax.set_xlabel("Days (# Days)")
-        ax.set_ylabel(f'Portfolio Value (Dollars) [starting value of {len(cum_df.columns)}]')
+    #%%
+    @staticmethod
+    def plotter(data1,data2,data3):
+
+        #Plot val_each_asset data
+        fig1, ax1 = plt.subplots()
+        for data in data1.values():
+            ax1.plot(data)
+        ax1.set_xlabel("Days (# Days)")
+        ax1.set_ylabel("Value (Dollars) [Starting Value of 1 Dollar for Each]")
         plt.show()
 
+        #Plot ending_vals data
+        fig2, ax2 = plt.subplots()
+        ax2.bar(x=data2.columns, height=data2.iloc[-1].values)
+        ax2.set_xlabel("Asset")
+        ax2.set_ylabel("Ending Value (Dollars) [Starting Value of 1 Dollar for Each]")
+        plt.show()
+
+        #Plot daily_portfolio data
+        fig3, ax3 = plt.subplots()
+        xvals = range(len(data3))
+        ax3.plot(xvals, data3)
+        ax3.set_xlabel("Days (# Days)")
+        ax3.set_ylabel(f'Portfolio Value (Dollars) [starting value of {len(data2.columns)}]')
+        plt.show()
