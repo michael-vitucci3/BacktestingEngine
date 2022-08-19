@@ -2,7 +2,7 @@
 Backtester
 class contains all necessary operations (besides StratFile which
 is stored in the main folder) to fully execute a backtest.Furthermore,
-it is a convenient data storage object. Apon calling obj.constructor
+it is a convenient data storage object. A pon calling obj.constructor
 all data will populate including
 fileLoc: Location of user input csv data
 inTT: Timetable of dates and prices gathered from a user input csv
@@ -10,8 +10,8 @@ Returns: Daily returns of each asset during all provided data points
 coinList: List of assets gathered from csv file
 data: Using StratFile, a new version of returns is generated.If the
 algorithm is holding an asset on that day, the data points
-remain, otherwise it is changed to zero.This yeilds the actual
-returns assuming instantaneous rebalancing at 12: 00:00 UTC
+remain, otherwise it is changed to zero.This yields the actual
+returns assuming instantaneous re-balancing at 12: 00:00 UTC
 daily.
 """
 
@@ -28,20 +28,19 @@ import StratFile
 class Backtester:
     # %%
     def __init__(self):
-        self.file_loc = easygui.fileopenbox(msg="Please Select .csv file of price data", filetypes="*.csv")
-        # self.in_df = self.csv_df()
-        self.csv_df = pd.read_csv(self.file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
-        self.logical_df = StratFile.strat_file(self.csv_df.astype(numpy.number).pct_change(1))
+        self._file_loc = easygui.fileopenbox(msg="Please Select .csv file of price data", filetypes="*.csv")
+        self._csv_df = pd.read_csv(self._file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
+        self._logical_df = StratFile.strat_file(self._csv_df.astype(numpy.number).pct_change(1))
 
     # %%
     def get_strat(self):
         """
         :param self:
-        :return: logical_df: dataframe of ones and zeros, ones representing when an algorithm is holding an asset,
+        :return: _logical_df: dataframe of ones and zeros, ones representing when an algorithm is holding an asset,
          zeros when not holding the asset. (calculated based off of contents of StratFile)
         """
 
-        return self.logical_df
+        return self._logical_df
 
     # %%
     @staticmethod
@@ -52,21 +51,16 @@ class Backtester:
         :param ret: returns at each data point (except the last since N data points yields N-1 returns values)
         :return: mult: element wise multiplication of two data frames (differing in size by one row)
         """
-        # maybe unnecessary
-        logic_df_ = logic_df.copy()
-        logic_df_ = logic_df_.fillna(0)
-        logic_df_ = logic_df_[1:]
-        print(logic_df_)
 
-        ret_ = ret.copy()
-        ret_ = ret_.fillna(0)
-        ret_ = ret_[:-1]
+        logic_df_ = logic_df.fillna(0)[1:]
+
+        ret_ = ret.fillna(0)[:-1]
         ret_ = ret_ + 1
 
-        print(ret_)
+        # Element wise multiplication of matrices
         mult = logic_df_.reset_index(drop=True) * ret_.reset_index(drop=True)
         mult[mult == 0] = 1
-        print(mult)
+
         return mult
 
     # %%
@@ -76,8 +70,8 @@ class Backtester:
         :returns: [cum_df, algo_ret]: [dataframe of cumulative values, returns based off StratFile]
         """
         tic = time.process_time()
-        ret = self.csv_df.astype(numpy.number).pct_change(1)
-        algo_ret = self.calc_ret(self.logical_df, ret)
+        ret = self._csv_df.astype(numpy.number).pct_change(1)
+        algo_ret = self.calc_ret(self._logical_df, ret)
         toc = time.process_time()
         print(f'{(toc - tic) * 1000}ms')
 
@@ -88,7 +82,6 @@ class Backtester:
         sum_vals = self.daily_portfolio(cum_df)
 
         self.plotter(cum_dict, cum_df, sum_vals)
-
 
     # %%
     @staticmethod
@@ -112,7 +105,6 @@ class Backtester:
         :param cum_dict: communicative values in dictionary
         :return: cum_df -  communicative values in dataframe
         """
-        fig, ax = plt.subplots()
         cum_df = pd.concat(cum_dict, axis=1, sort=True)
         cum_df.fillna(method='ffill')
         cum_df.fillna(method='bfill')
@@ -137,6 +129,13 @@ class Backtester:
     #%%
     @staticmethod
     def plotter(data1, data2, data3):
+        """
+
+        :param data1: cum_dict, data from val_each_asset
+        :param data2: cum_df, data from ending_vals
+        :param data3: sum_vals, data from daily_portfolio
+        :return: None
+        """
 
         # Plot val_each_asset data
         fig1, ax1 = plt.subplots()
@@ -160,5 +159,3 @@ class Backtester:
         ax3.set_xlabel("Days (# Days)")
         ax3.set_ylabel(f'Portfolio Value (Dollars) [starting value of {len(data2.columns)}]')
         plt.show()
-
-

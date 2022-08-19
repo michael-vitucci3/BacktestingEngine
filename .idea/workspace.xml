@@ -10,6 +10,7 @@
     <list default="true" id="b68ada55-2b24-47c2-80e3-e47929786fdd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_Python/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Backtester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/FetchCoinbaseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/FetchCoinbaseData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_Python/StratFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/StratFile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +88,7 @@
       <workItem from="1660799038041" duration="56000" />
       <workItem from="1660827778760" duration="42000" />
       <workItem from="1660827872963" duration="135000" />
-      <workItem from="1660828019849" duration="6541000" />
+      <workItem from="1660828019849" duration="8976000" />
     </task>
     <servers />
   </component>
