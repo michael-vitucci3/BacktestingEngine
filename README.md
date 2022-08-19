@@ -1,64 +1,24 @@
 # BacktestingEngine
- MATLAB scripts to fetch data from Coinbase and backtest an algorithm on the data. Start by running **main.m**. This will fetch all of the
- necissary backtesting data and execute the defult algorithm. Once you do this, feel free to adjust StratFile.m to your own algorithm and 
- test profitability. StratFile is practically infinity customizable as long as it still returns a logical timetable for the same dates/assets.
- This means that from StratFile.m you can call other files or even languages, import more data, or just about anything else you can possibly think of
- without disrupting the backtest analysis built in.
- 
- 
-## Files Overview
+MATLAB and Python scripts to fetch data from Coinbase and backtest an algorithm on the data. Start by running **main.m** or **main.py** then choose what you would like to do. You can test your own algorithm quickly by changing StratFile.m or StratFile.py to anything you'd like.
+**This is Not Financial Advice**
+
 =======================================================================================================
 
-Backtester.m
+Backtester.m / Backtester.py output these charts/data (More analysis as well as an option to backtest on Brownian Motion will soon be added)
 
-                         Backtester class contains all necessary operations (besides StratFile which
-                         is stored in the main folder) to fully execute a backtest. Furthermore,
-                         it is a convient data storage object. Apon calling obj.constructor 
-                         all data will populate including 
-                           fileLoc : Location of user input csv data
-                           inTT : Timetable of dates and prices gathered from a user input csv
-                           Returns : Daily returns of each asset during all provided data points
-                           coinList : List of assets gathered from csv file
-                           data : Using StratFile, a new version of returns is generated. If the 
-                                   algorithm is holding an asset on that day, the data points
-                                    remain, otherwise it is changed to zero. This yeilds the actual
-                                    returns assuming instintanious rebalancing at 12:00:00 UTC
-                                    daily.  
---------------------------------------------------------------------------------------------------------------                                    
-GetCoinbaseData.m      
+Python:
 
-                         This script will fetch a list of all poroducts on coinbase, import the entire
-                         daily close value history, then save each one to a .xlsx file. Next, it will read 
-                         back in each file and save each one to a combined .csv file containing all data 
-                         points of all coins. Finally, it will read in the .csv file inorder to make a matlab 
-                         timetable which can be used for analysis. Of course that system could be simplified 
-                         drasticly, however I left in some unneccisary steps so the data being fed in can be 
-                         taylored to excactly what is needed. 
---------------------------------------------------------------------------------------------------------------                                        
-main.m                   
+<img width="633" alt="img1" src="https://user-images.githubusercontent.com/107174743/185544629-16c11710-3dca-4fde-b27f-c9f6ca0401a9.png">
+<img width="691" alt="img2" src="https://user-images.githubusercontent.com/107174743/185544633-e8483c97-b982-4732-9688-de114d218096.png">
+<img width="911" alt="img3" src="https://user-images.githubusercontent.com/107174743/185544634-cef642e6-11e7-4dd3-9bad-2d55c8e8a972.png">
+<img width="571" alt="img4" src="https://user-images.githubusercontent.com/107174743/185547078-9367ae4d-7218-479d-98f1-9e9d15837a38.png">
 
-                         Main file which calls every other file. **Start Here**
--------------------------------------------------------------------------------------------------------------- 
-RunBacktesting.m         
+MATLAB:
 
-                         This script stitches together the various methods in backtester in order
-                         to generate profit and loss of the algorithm as well as various other statistics
-                         simply from a csv file of data points.
--------------------------------------------------------------------------------------------------------------- 
-StratFile.m              
+<img width="633" alt="img5" src="https://user-images.githubusercontent.com/107174743/185547432-0fbdfcf8-ce92-4f83-a6ba-b61ed5851321.png">
+<img width="633" alt="img6" src="https://user-images.githubusercontent.com/107174743/185547424-8da0ba6b-bc56-4f41-bb3d-c42858087be2.png">
+<img width="933" alt="img8" src="https://user-images.githubusercontent.com/107174743/185548062-e4e063e8-0a41-43da-a1da-0e6dbbbfd1ba.png">
+<img width="633" alt="img8" src="https://user-images.githubusercontent.com/107174743/185546652-9fa034e7-8ca9-424a-8db0-0de9a7d7011f.png">
 
-                            INPUT:
-                                   inTT: input timetable containing dates and daily close values
-                                      of any amount of coins/stocks/commodities/derivatives/etc....
-                            OUTPUT:
-                                   logicTT: output time table with same dates and variable names
-                                      as inTT, however filled with a 1 if the strategy says you are
-                                      holding the asset on that day, 0 if you are not (Assuming
-                                      portfolio rebalancing once daily at the open of each day
-                                      
-                            Example stratagy file, delete the following code and replace with
-                            your own in order to run backtesting.
 
-                            Buys and sells are determined off of closing price for the day prior.
-                            If % change for day(n) is positive, day(n+1) the algorithm will hold
-                            the asset, only to sell if % change is negative
+
