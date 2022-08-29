@@ -1,25 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="3" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b68ada55-2b24-47c2-80e3-e47929786fdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main_Python/Backtesting/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_Python/Brownian_Motion/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_Python/Brownian_Motion/brownian.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_Python/window_dialog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/StratFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Brownian_Motion/BrownianMotion.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Brownian_Motion/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Brownian_Motion/brownian.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Brownian_Motion/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Coinbase_Fetcher/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/data/Coinbase_Data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/data/brownian_data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_Python/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Backtesting/Backtester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_Python/BigCSVData.csv" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/BigCSVData.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_Python/FetchCoinbaseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/FetchCoinbaseData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_Python/StratFile.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/StratFile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_Python/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/main_Python/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/csv-plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/main (Python).iml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/main (Python).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Backtesting/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/Backtester.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Backtesting/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Brownian_Motion/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Brownian_Motion/brownian.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Brownian_Motion/brownian_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Brownian_Motion/brownian_motion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/BigCSVData.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/FetchCoinbaseData.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Coinbase_Fetcher/FetchCoinbaseData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/StratFile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/Coinbase_Fetcher/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/setup.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_Python/window_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/window_dialog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +58,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Setup Script" />
       </list>
     </option>
   </component>
@@ -62,9 +91,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/main_Python/Coinbase_Fetcher" />
-      <recent name="$PROJECT_DIR$/main_Python/Backtesting" />
-      <recent name="$PROJECT_DIR$/main_Python/Brownian_Motion" />
+      <recent name="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Brownian_Motion" />
+      <recent name="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting" />
+      <recent name="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine" />
+      <recent name="$PROJECT_DIR$/python_backtesting_engine" />
+      <recent name="$PROJECT_DIR$/main_python" />
     </key>
   </component>
   <component name="RunManager">
@@ -112,6 +143,9 @@
       <workItem from="1660827778760" duration="42000" />
       <workItem from="1660827872963" duration="135000" />
       <workItem from="1660828019849" duration="25324000" />
+      <workItem from="1661294248210" duration="14430000" />
+      <workItem from="1661453210531" duration="2780000" />
+      <workItem from="1661478472780" duration="35171000" />
     </task>
     <servers />
   </component>
@@ -130,6 +164,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BacktestingEngine$pytest_in_tester_py.coverage" NAME="pytest in tester.py Coverage Results" MODIFIED="1661746019955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python_backtesting_engine" />
     <SUITE FILE_PATH="coverage/BacktestingEngine$Backtester.coverage" NAME="Backtester Coverage Results" MODIFIED="1659855385257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main (Python)" />
   </component>
 </project>

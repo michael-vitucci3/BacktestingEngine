@@ -1,0 +1,36 @@
+# pyproject.toml
+
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="python_backtesting_engine"
+version="4.0.5"
+authors=[
+  { name="Michael Vitucci", email="author@example.com" },
+]
+description="Backtest your own algo, fetch Coinbase data, and generate Brownian data"
+readme = "README.md"
+license= { file="LICENSE" }
+requires-python = "<=3.10"
+classifiers=[
+    "Programming Language :: Python",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "setuptools",
+    "easygui",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scipy",
+    "requests",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/michael-vitucci3/BacktestingEngine"
