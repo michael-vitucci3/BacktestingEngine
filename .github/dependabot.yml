@@ -5,7 +5,10 @@
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "BacktestingEngine/python_backtesting_engine/pyproject.toml" # Location of package manifests
+  - package-ecosystem: "pip"
+    directory: "/python_backtesting_engine/pyproject.toml" # Location of package manifests
     schedule:
-      interval: "weekly"
+      interval: "daily"
+    # Only allow updates to the lockfile for pip and
+    # ignore any version updates that affect the manifest
+    versioning-strategy: lockfile-only
