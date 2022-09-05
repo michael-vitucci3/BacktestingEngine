@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$/python_backtesting_engine">
       <sourceFolder url="file://$MODULE_DIR$/python_backtesting_engine/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (python_backtesting_engine)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (python_backtesting_engine)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">

@@ -19,7 +19,6 @@ daily.
 
 import time
 
-import easygui
 import matplotlib.pyplot as plt
 import numpy
 import pandas as pd
@@ -29,20 +28,10 @@ from python_backtesting_engine.Backtesting import StratFile
 
 class Backtester:
     # %%
-    def __init__(self):
-        self._file_loc = easygui.fileopenbox(msg="Please Select .csv file of price data", filetypes="*.csv")
+    def __init__(self, data_file):
+        self._file_loc = data_file[0]
         self._csv_df = pd.read_csv(self._file_loc, index_col=0, infer_datetime_format=True, parse_dates=True)
         self._logical_df = StratFile.strat_file(self._csv_df.astype(numpy.number).pct_change(1))
-
-    # %%
-    def get_strat(self):
-        """
-        :param self:
-        :return: _logical_df: dataframe of ones and zeros, ones representing when an algorithm is holding an asset,
-         zeros when not holding the asset. (calculated based off of contents of StratFile)
-        """
-
-        return self._logical_df
 
     # %%
     @staticmethod
@@ -54,10 +43,11 @@ class Backtester:
         :return: mult: element wise multiplication of two data frames (differing in size by one row)
         """
 
+        # clean data
         logic_df_ = logic_df.fillna(0)[1:]
 
         ret_ = ret.fillna(0)[:-1]
-        ret_ = ret_ + 1
+        ret_ = ret_ + 1 # change from +10% == 0.10 to +10% == 1.10
 
         # Element wise multiplication of matrices
         mult = logic_df_.reset_index(drop=True) * ret_.reset_index(drop=True)
@@ -161,3 +151,27 @@ class Backtester:
         ax3.set_xlabel("Days (# Days)")
         ax3.set_ylabel(f'Portfolio Value (Dollars) [starting value of {len(data2.columns)}]')
         plt.show()
+
+    #%%
+    def calc_stats(self):
+        """
+        :param  self:
+        :returns: [cum_df, algo_ret]: [dataframe of cumulative values, returns based off StratFile]
+        """
+        tic = time.process_time()
+        ret = self._csv_df.astype(numpy.number).pct_change(1)
+        algo_ret = self.calc_ret(self._logical_df, ret)
+        toc = time.process_time()
+        print(f'{(toc - tic) * 1000}ms')
+
+        cum_dict = self.val_each_asset(algo_ret)
+
+        cum_df = self.ending_vals(cum_dict)
+
+        sum_vals = self.daily_portfolio(cum_df)
+
+        self.plotter(cum_dict, cum_df, sum_vals)
+
+
+
+

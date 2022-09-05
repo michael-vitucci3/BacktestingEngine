@@ -9,14 +9,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name="python_backtesting_engine"
-version="4.0.5"
+version="4.0.7"
 authors=[
   { name="Michael Vitucci", email="author@example.com" },
 ]
 description="Backtest your own algo, fetch Coinbase data, and generate Brownian data"
 readme = "README.md"
 license= { file="LICENSE" }
-requires-python = "<=3.10"
+requires-python = ">=3.6"
 classifiers=[
     "Programming Language :: Python",
     "License :: OSI Approved :: MIT License",
@@ -24,12 +24,12 @@ classifiers=[
 ]
 dependencies = [
     "setuptools",
-    "easygui",
     "matplotlib",
     "numpy",
     "pandas",
     "scipy",
     "requests",
+    "PyQt5"
 ]
 
 [project.urls]
