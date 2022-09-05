@@ -1,30 +1,33 @@
 # BacktestingEngine
 
-MATLAB and Python scripts to fetch data from Coinbase, generate Brownian Motion data, and backtest an algorithm on the data. Start by running main.m or __main__.py then choose what you would like to do. You can test your own algorithm quickly by changing StratFile.m or StratFile.py to anything you'd like. This is Not Financial Advice
+MATLAB and Python scripts to fetch data from Coinbase, generate Brownian Motion data, and backtest an algorithm on the data. Start by running main.m or or following the below instructions for Python then choose what you would like to do. You can test your own algorithm quickly by changing BacktestingEngine/main (MATLAB)/StratFile.m or BacktestingEngine/python_backtesting_engine/src/python_backtesting_engine/Backtesting/StratFile.py to anything you'd like. This is Not Financial Advice
 
 =======================================================================================================
 
-you can now pip install this package using the command
+You can now pip install this package using the command
 
 'pip3 install python-backtesting-engine'
 
-in command line. Once installed navigate to where it is installed and enter
+in command line. Once installed navigate to where it is installed (typically 
+/usr/"user name here"/miniconda3/lib/python3.10/site-packages or
+/usr/local/lib/python3.10/site-packages) then enter:
 
 'python3 python_backtesting_engine'
 
 to run it from command line.
 
-The following are a few previews of possible charts to generate:
-
 Python:
 
-![image](https://user-images.githubusercontent.com/107174743/187279550-220fa70d-e98f-44c9-a60f-304b85cdb17d.png)
+<img width="514" alt="Screen Shot 2022-09-05 at 3 05 00 AM" src="https://user-images.githubusercontent.com/107174743/188402972-89a30428-29f3-4d55-84c1-4137e6a24b6e.png">
+                                                                 
+ <img width="962" alt="Screen Shot 2022-09-05 at 3 06 06 AM" src="https://user-images.githubusercontent.com/107174743/188402981-971cc47a-d8ea-46e4-8731-d94eb95cf506.png">
 
-![image](https://user-images.githubusercontent.com/107174743/187279755-98702083-9381-465e-af9c-f1c1596150cf.png)
+<img width="889" alt="Screen Shot 2022-09-05 at 3 12 47 AM" src="https://user-images.githubusercontent.com/107174743/188403245-e0b0f52b-bb1a-4c7d-9f1c-09af13baf236.png">
 
-![image](https://user-images.githubusercontent.com/107174743/187279828-374501cf-0349-4ad1-be67-c7ce1aca8ce6.png)
+<img width="874" alt="Screen Shot 2022-09-05 at 3 15 08 AM" src="https://user-images.githubusercontent.com/107174743/188403284-b0cabf3f-badb-49ce-aaa2-f5cd43784258.png">
 
-![image](https://user-images.githubusercontent.com/107174743/187279916-a9b66395-3231-4650-8234-0280c6cd32c5.png)
+<img width="992" alt="Screen Shot 2022-09-05 at 3 16 26 AM" src="https://user-images.githubusercontent.com/107174743/188403347-dbc6d747-e5c1-46e4-9003-cf5267c79616.png">
+
 
 MATLAB:
 
