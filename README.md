@@ -1,6 +1,6 @@
 # BacktestingEngine
 
-MATLAB and Python scripts to fetch data from Coinbase, generate Brownian Motion data, and backtest an algorithm on the data. Start by running main.m or or following the below instructions for Python then choose what you would like to do. You can test your own algorithm quickly by changing BacktestingEngine/main (MATLAB)/StratFile.m or BacktestingEngine/python_backtesting_engine/src/python_backtesting_engine/Backtesting/StratFile.py to anything you'd like. This is Not Financial Advice
+MATLAB and Python scripts to fetch data from Coinbase, generate Brownian Motion data, and backtest an algorithm on the data. Start by running main.m or following the below instructions for Python then choose what you would like to do. You can test your own algorithm quickly by changing BacktestingEngine/main (MATLAB)/StratFile.m or BacktestingEngine/python_backtesting_engine/src/python_backtesting_engine/Backtesting/StratFile.py to anything you'd like. This is Not Financial Advice
 
 =======================================================================================================
 
