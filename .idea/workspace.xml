@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b68ada55-2b24-47c2-80e3-e47929786fdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/python_backtesting_engine/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BacktestingEngine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_backtesting_engine/pyproject.toml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/Backtester.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/Backtester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/data/brownian_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/data/brownian_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/window_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/window_dialog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +27,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/python_backtesting_engine/guis_galore.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/python_backtesting_engine/pyproject.toml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/python_backtesting_engine/setup.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/Backtester.py" root0="FORCE_HIGHLIGHTING" />
@@ -78,6 +71,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.__main__">
+    <configuration name="Backtester" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BacktestingEngine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python_backtesting_engine/src/python_backtesting_engine/Backtesting/Backtester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="BacktestingEngine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,6 +176,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.__main__" />
+        <item itemvalue="Python.Backtester" />
         <item itemvalue="Python.guis_galore" />
         <item itemvalue="Python tests.pytest in python_backtesting_engine" />
       </list>
@@ -192,7 +208,9 @@
       <workItem from="1661478472780" duration="43487000" />
       <workItem from="1662271592507" duration="10604000" />
       <workItem from="1662353512455" duration="132000" />
-      <workItem from="1662353763379" duration="2809000" />
+      <workItem from="1662353763379" duration="3413000" />
+      <workItem from="1662363205532" duration="12201000" />
+      <workItem from="1662559959827" duration="3257000" />
     </task>
     <servers />
   </component>
